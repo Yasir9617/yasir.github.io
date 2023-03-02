@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Comlatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Webpage By Yasir Hameed</title>
+<style>@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap'); 
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: red;
+	background-size: cover;
+	background-position: center;
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 99;
+}
+
+.logo {
+	justify-content: center;
+	align-items: center;
+	margin-left: 70px;
+	margin-top: -400px;
+	font-size: 5em;
+    color:  #fff;
+	user-select: none;
+
+}
+
+.navigation a {
+	margin-left: -600px;
+	font-size: 1.1em;
+	color:  #fff;
+	text-decoration: none;
+	font-weight: 500;
+	margin-left: 40px;
+}
+
+
+
+.navigation a:hover::after {
+	transform-origin: left;
+	transform: scaleX(0.8);
+}
+
+.navigation .btnLogin-popup{
+	width: 130px;
+	height: 50px;
+	background: transparent;
+	border: 2px solid  #fff;
+	outline: none;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 1.1em;
+	color:  #fff;
+	font-weight: 500;
+	margin-left: 40px;
+	transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover {
+	background: #fff;
+	color: #162938;
+}
+h1{
+	font-size: 70px;
+	display: block;
+	color: white;
+	font-weight: 900;
+}
+.multiText{
+	color: #00ff7f;
+	font-size: 70px;
+	text-transform: capitalize;
+}
+.head {
+	font-size: 35px;
+	left: 50px;
+	color: #fff;
+	top: 200px;
+	bottom: -10px;
+	font-weight: 1000;
+	width: 700px;
+	height: 500px;
+	position: absolute;
+	user-select: none;
+}
+
+
+.wrapper  {
+	position: relative;
+	width: 400px;
+	height: 440px;
+	background: transparent;
+	border: 3px solid rgba(255, 255, 255, .5);
+	border-radius: 25px;
+	backdrop-filter: blur(10px);
+	box-shadow: 0 0 30px rgba(0, 0, 0, 2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: transform .5s ease, height .2s ease;
+    overflow: hidden;
+	transform: scale(0);
+}
+.wrapper.active-popup {
+	transform: scale(0.8);
+}
+.wrapper.active {
+	height: 600px;
+}
+	
+.wrapper .form-box {
+	width: 100%;
+	padding: 40px;
+	
+}
+
+.wrapper .icon-close {
+	background-color: black;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 45px;
+	height: 45px;
+	font-size: 2em;
+	font-weight: 500;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom-left-radius: 25px;
+	cursor: pointer;
+	z-index: 1;
+}
+.wrapper .form-box.login {
+	transition: transform .18s ease;
+	transform: translateX(0);
+}
+.wrapper.active .form-box.login {
+	transition: none;
+	transform: translateX(-400px);
+   
+}
+
+.wrapper .form-box.register {
+	position: absolute;
+	transition: none;
+	transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+	transition: transform .18s ease;
+	transform: translateX(0);
+} 
+
+.form-box h2 {
+	font-size: 2em;
+	color:#162938;
+	text-align: center;
+	}
+	
+.input-box {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	border-bottom: 2px solid #162938;
+	margin: 40px 0;
+}
+
+.input-box label {
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	transform: translateY(-50%);
+	font-size: 1em;
+	color: #fff;
+	font-weight: 500;
+	pointer-events: none;
+	transition: .5s;
+}
+.input-box input:focus~label,
+.input-box inpu:valid~label {
+	top: -5px;
+	
+}
+.input-box input {
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-size: 1em;
+	color: #162938;
+	font-weight: 600;
+	padding: 0 35px 0 7px;
+ 
+}
+
+.input-box .icon {
+	position: absolute;
+	right: 8px;
+	font-size: 1.2em;
+	color: #162938;
+	line-height: 57px;
+}
+
+.remember-forgot {
+	font-size: .9em;
+	color: #162938;
+	font-weight: 500;
+	margin: -15px 0 15px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.remember-forgot label input {
+	accent-color: #162938;
+	margin-right: 3px;
+}
+
+.remember-forgot a {
+	color: #162938;
+	text-decoration: none;
+}
+
+.remember-forgot a:hover {
+	text-decoration: underline;
+}
+
+.btn {
+	width: 100%;
+	height: 45px;
+	background: #162938;
+	border: none;
+	outline: none;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 1em;
+	color: #fff;
+	font-weight: 500;
+}
+
+.login-register {
+	font-size: .9em;
+	color: #162938;
+	text-align: center;
+	font-weight: 500;
+	margin: 25px 0 10px;
+	
+}
+
+.login-register p a {
+	color: #162938;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.login-register p a:hover {
+	text-decoration: underline;
+} </style>
+</head>
+
+<Body>
+
+   <header>
+  <h1>I'm <span class="multiText"></span></h1>
+   <h2 class="logo">Yasir</h2>
+	<nav class="navigation">
+	<a href="">Home</a>
+	<a href="">About</a>
+	<a href="">Service</a>
+	<a href="">Contact</a>
+	<button class="btnLogin-popup">Login</button>
+	</nav>
+	</header>
+<div class="wrapper">
+	     <button type="close" class="icon-close">X</button>
+	<div class="form-box login">
+	<h2>Login</h2>
+	<form action="#">
+	<div class="input-box">
+	<span class="icon">
+	<ion-icon name="mail"></ion-icon></span>
+	<input type="email" required>
+	<label>Email</label>
+	</div>
+	<div class="input-box">
+	
+	<input type="password" required>
+	<label>Password</label>
+	</div>
+	<div class="remember-forgot">
+	<label><input type="checkbox">Remember me</label>
+	<a href="#">Forgot Password?</a>
+	</div>
+	<button type="submit" class="btn">Login</button>
+	<div class="login-register">
+	<p>Do not have an account? <a href="#" class="register-link">Register</a></p>
+	</div>
+	</form>
+	</div>
+	
+	
+	
+<div class="form-box register">
+	<h2>Registration</h2>
+	<form action="#">
+	<div class="input-box">
+	<input type="text" required>
+	<label>Username</label>
+	</div>
+	<div class="input-box">
+	<span class="icon">
+	<ion-icon name="mail"></ion-icon></span>
+	<input type="email" required>
+	<label>Email</label>
+	</div>
+	<div class="input-box">
+	<span class="icon"></span>
+	<input type="password" required>
+	<label>Password</label>
+	</div>
+	<div class="remember-forgot">
+	<label><input type="checkbox">I agree to the terms & conditions</label>
+	
+	</div>
+	<button type="submit" class="btn">Register</button>
+	<div class="login-register">
+	<p>Already have an account? <a href="#" class="login-link">Login</a></p>
+	</div>
+	</form>
+	</div>
+	
+	<script>
+const wrapper = document.querySelector('.wrapper');
+const loginLink  = document.querySelector('.login-link');
+const registerLink = document.querySelector('.register-link');
+const btnPopup = document.querySelector('.btnLogin-popup');
+const iconClose = document.querySelector('.icon-close');
+loginLink.addEventListener('click' , ()=> {
+	wrapper.classList.remove('active');
+});
+
+registerLink.addEventListener('click' , ()=> {
+	wrapper.classList.add('active');
+});
+
+btnPopup.addEventListener('click' , ()=> {
+	wrapper.classList.add('active-popup');
+});
+
+iconClose.addEventListener('click' , ()=> {
+	wrapper.classList.remove('active-popup');
+});
+
+</script>
+ <script>   
+var
+
+emailArray=[];
+
+var passwordArray=[];
+
+var loginBox =
+
+document.getElementById("login");
+
+var regBox =
+
+document.getElementById("register");
+
+var forgetBox =
+
+document.getElementById("forgot");
+
+var loginTab =
+
+document.getElementById("email");
+
+var regTab =
+
+document.getElementById("password");
+
+function regTabFun(){
+
+event.preventDefault();
+
+regBox.style.visibility="visible";
+
+loginBox.style.visibility="hidden";
+
+forgetBox.style.visibility="hidden";
+
+regTab.style.backgroundColor="rgb(12,
+
+132, 189)";
+
+loginTab.style.backgroundColor="rgba(11, 177, 224, 0.82);
+
+}
+
+function loginTabFun(){ event.preventDefault();
+
+regBox.style.visibility="hidden";
+
+loginBox.style.visibility="visible";
+
+forgetBox.style.visibility="hidden":
+
+loginTab.style.backgroundColor="rgb(12, 132,
+
+189)";
+
+reglab.style.backgroundColor=rgba(11, 177, 224, 0.82)";
+
+function forTabFun(){ event.preventDefault();
+
+regBox.style.visibility="hidden";
+
+loginBox.style.visibility="hidden"
+
+forgetBox.style.visibility="visible";
+
+regTab.style.backgroundColor="rgba(11,
+
+177, 224, 0.82)";
+
+loginTab.style.backgroundColor="rgba(11, 177, 224, 0.82);
+
+function register(){ event.preventDefault();
+
+var email.
+
+document.getElementById("text").value;
+
+var password= document.getElementById("email").value;
+
+var passwordRetype = document.getElementById("password").value;
+
+if (email){
+
+alert("Email required."); return;
+
+{
+else if (password == ""){
+
+alert("Password required."); return;
+
+else if(emailArray.indexOf(email)
+
+emailArray.push(email);
+
+passwordArray.push(password):
+
+alert(email Thanks for registration. InTry to login Now");
+   
+document.getElementById("email").value="";
+
+document.getElementById("password").value="";
+
+else{
+
+alert(email +
+
+register.");
+
+return;
+}
+}
+
+function login(){
+
+event.preventDefault();
+
+var email=
+
+document.getElementById("email").value; var password=
+
+document.getElementById("password").value;
+
+var i = emailArray.indexOf(email);
+
+if(emailArray.indexOf(email)== -1) {
+
+if (email alert("Email required.");
+
+return;
+
+alert("Email does not exist.");
+
+return;
+
+}
+
+else if(passwordArray[1] = password){
+
+if (password == ""){ alert("Password required."); return;
+
+alert("Password does not match.");
+
+return;
+
+}
+
+else {
+
+alert(email yor are login Now
+
+in welcome to our website.");
+
+document.getElementById("email").value="";
+
+document.getElementById("password").value="";
+
+return;
+
+function forgot(){
+
+event.preventDefault();
+
+var email =
+
+document.getElementById("email").value;
+
+if(emailArray.IndexOf(email) == -1){
+
+if (email == ""){
+
+alert("Email required."); return;
+
+} alert("Email does not exist.");
+
+return;
+
+alert("email is send to your email check it in 24hr. In Thanks"); document.getElementById("fe").value
+
+="";
+}
+</script>
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+	<script>
+	    var typingEffect = new Typed(".multiText",{
+		strings : ["coder","designer"," developer"],
+		loop : true,
+		typeSpeed : 100,
+		backSpeed : 80,
+		backDelay : 1500
+		})
+	<script>
+	</body>
+	</html>
