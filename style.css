@@ -1,0 +1,48 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+h1{
+	font-size: 30px;
+	margin-top: 20px;
+	margin-left: 30px;
+	
+}
+.navbar {
+	position: inline;
+	display: none;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 20px;
+}
+body{
+	background: url('yasir.jpg')no-repeat;
+	background-size: cover;
+}
+h1{
+	color: #fff;
+	font-size: 30px;
+	margin-top: 20px;
+	margin-left: 50px;
+}
+a{
+	margin-left: 30px;
+    margin-top: 40px;	
+	background: darkorange;
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	letter-spacing: 0.1em;
+	font-weight: 400;
+	padding: 15px 30px;
+	transation: 0.5s;
+	gap: 50px;
+	border-radius: 10px;
+ }
+ 
+ a:hover {
+	 letter-spacing: 0.25em;
+	 background: var(--clr);
+	 box-shadow: 0 0 35px var(--clr);
+ }
